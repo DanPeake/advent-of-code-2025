@@ -3,6 +3,7 @@ with open('data.txt') as f: raw = f.read()
 # We have a dial that is numbered 0-99, and a sequence of left/right turns to perform
 # - The dial starts at position 50
 # - The password is the number of times the dial stops on 0 after each step in the sequence
+# Test data answer: 3
 
 #raw = "L68\nL30\nR48\nL5\nR60\nL55\nL1\nL99\nR14\nL82"
 data = raw.strip().split()
@@ -22,7 +23,8 @@ print('1. Password:', count)
 
 ########################################
 
-# - The password is the number of times the dial passes or stops on 0 during each step
+# The password is the number of times the dial passes or stops on 0 during each step
+# Test data answer: 6
 
 dial = 50
 count = 0
