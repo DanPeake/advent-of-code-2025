@@ -23,8 +23,7 @@ def get_largest_combo(row, digits):
     row_size = len(row)+1
     for step in range(digits):
         # Scans starting from the digit after the previous selected digit
-        # It needs to find the requested number of digits:
-        # It scans up to a point where the number of digits it needs to fill remain in the row
+        # Only scans up until the number of digits it still needs to find remain in the row
         for current_ind in range(largest_ind+1, row_size-(digits-step)):
             if row[current_ind] > row[largest_ind]:
                 largest_ind = current_ind
