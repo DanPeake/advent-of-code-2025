@@ -1,4 +1,6 @@
+from time import perf_counter
 import re
+
 with open('data.txt') as f: raw = f.read()
 
 # Given a list of ID ranges (inclusive), find invalid IDs in each range
@@ -10,6 +12,7 @@ with open('data.txt') as f: raw = f.read()
 data = raw.strip().split(',')
 id_list = [s.split('-') for (s) in data]
 
+start_time = perf_counter()
 invalid_id_sum = 0
 for id_range in id_list:
     for id in range(int(id_range[0]), int(id_range[1])+1):
@@ -21,13 +24,14 @@ for id_range in id_list:
             if str_id[:ind] == str_id[ind:]:
                 invalid_id_sum += id
 
-print('1. Sum of double repeated IDs:', invalid_id_sum)
+print('1. Sum of double repeated IDs:', invalid_id_sum, f"({round(perf_counter() - start_time,2)}s)")
 
 ########################################
 
 # An invalid ID is one that is filled with a pattern that repeats at least twice
 # Test data sum of invalid IDs: 4174379265
 
+start_time = perf_counter()
 invalid_id_sum = 0
 for id_range in id_list:
     for id in range(int(id_range[0]), int(id_range[1])+1):
@@ -35,4 +39,4 @@ for id_range in id_list:
         if re.fullmatch(r"(.+)\1+", str(id)) is not None:
             invalid_id_sum += id
 
-print('2. Sum of all repeat IDs:', invalid_id_sum)
+print('2. Sum of all repeat IDs:', invalid_id_sum, f"({round(perf_counter() - start_time,2)}s)")
