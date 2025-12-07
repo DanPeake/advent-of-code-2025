@@ -24,7 +24,7 @@ for rotation in sequence:
 
 print('1. Password:', count, f"({round(perf_counter() - start_time,2)}s)")
 
-########################################
+###############################################################################
 
 # The password is the number of times the dial passes or stops on 0 during each step
 # Test data answer: 6

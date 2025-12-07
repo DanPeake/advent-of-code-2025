@@ -26,7 +26,7 @@ for id_range in id_list:
 
 print('1. Sum of double repeated IDs:', invalid_id_sum, f"({round(perf_counter() - start_time,2)}s)")
 
-########################################
+###############################################################################
 
 # An invalid ID is one that is filled with a pattern that repeats at least twice
 # Test data sum of invalid IDs: 4174379265

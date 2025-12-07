@@ -37,7 +37,7 @@ for row in data:
 
 print('1. Sum of largest 2-combo num in reach row:', sum, f"({round(perf_counter() - start_time,2)}s)")
 
-########################################
+###############################################################################
 
 # Now find 12 digits in each row
 # Test data answers: 987654321111 + 811111111119 + 434234234278 + 888911112111 = 3121910778619
