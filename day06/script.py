@@ -63,7 +63,6 @@ start_time = perf_counter()
 result = 0
 for problem in data:
     nums = [int("".join(n).strip()) for n in zip(*problem[:-1])]
-    print(nums)
     result += solve_problem(nums, problem[-1].strip())
 
 print('2. Sum of column problems:', result, f"({round(perf_counter() - start_time,2)}s)")
